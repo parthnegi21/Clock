@@ -7,11 +7,11 @@ export default function Window() {
   const [min, setMin] = useState('00');
   const [m, setM] = useState('am');
   const [isOn, setIsOn] = useState(false);
-  const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+  const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+      setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }));
     }, 1000);
 
     return () => clearInterval(interval);
